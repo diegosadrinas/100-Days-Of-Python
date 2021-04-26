@@ -1,0 +1,3 @@
+An app that creates s playlist composed by every song included in the Top 100 Billboard ranking in a given date. Every crucial information is allocated in environment variables. 
+In order to get this app to work, you'll need to generate a client ID and Secret in the Spotify for developers page. I used spotipy in order to simplify things, but the same result can be obtained by using spotify API. 
+This code can work for any user, but you'll need to provide your user ID if you want the playlist to appear in your spotify account. This step is of course automatic, after providing a client ID and Secret.
