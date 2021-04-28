@@ -1,0 +1,3 @@
+An app that scraps an amazon product of your choice and sends you an email alert every time the price drops. As always, any crucial information is allocated in environment variables. In order to use this app, you'll need to create an .env file with your personal information.
+I used bs4 for web scrapping and smtplib to interact with email accounts.
+You can simply change the link for the selected product and stablished a new reference price. Once you've done that, just choose a site to run online python code and set it to run everyday (of course, that's up to you). In my case, I always choose pythonanywhere.
