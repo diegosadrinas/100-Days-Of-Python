@@ -6,7 +6,6 @@ import time
 
 USER_ID = decouple.config("USER_ID")
 PASS = decouple.config("PASS")
-print(USER_ID, PASS)
 
 linkedin_url = "https://www.linkedin.com/jobs/search/?currentJobId=2512331907&f_AL=true&f_E=2&f_WRA=true&geoId=" \
                "102257491&keywords=python%20developer&location=London%2C%20England%2C%20United%20Kingdom"
@@ -51,7 +50,7 @@ for item in job_containers:
         print("An unexpected confirm dialog box was open. Dismiss and continue.")
         pass
     except NoSuchElementException as error:
-        print(f"No está el botón para aplicar al trabajo Item:{application_number}. O ya se aplicó a ese trabajo.")
+        print(f"The button for applying a job is not available in application number :{application_number}. ")
         pass
 
 driver.quit()
