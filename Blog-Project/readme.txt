@@ -1,0 +1,2 @@
+This is the first part of a capstone project using HTML, CSS, Bootstrap and Flask (and Jinja of course). The project aims to develops a full blog functionality, including frontend, backend, databases and API creation. 
+This part is exclusively about frontend development and flask implementation.
