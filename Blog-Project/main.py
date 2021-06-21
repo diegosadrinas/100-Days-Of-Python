@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, request
 import requests
 
 app = Flask(__name__)
@@ -14,7 +14,6 @@ headers = {
 response = requests.get(url=posts_url, headers=headers)
 response.raise_for_status()
 all_posts = response.json()
-print(all_posts)
 
 
 @app.route("/")
@@ -27,7 +26,7 @@ def goto_about():
     return render_template("about.html")
 
 
-@app.route("/contact")
+@app.route("/contact", methods=['GET', 'POST'])
 def goto_contact():
     return render_template("contact.html")
 
@@ -39,6 +38,12 @@ def goto_post(post_id):
         if post["id"] == post_id:
             requested_post = post
     return render_template("post.html", post=requested_post)
+
+
+@app.route('/form_entry', methods=['GET', 'POST'])
+def received_data():
+    print(request.form['name'], request.form['email'], request.form['phone'], request.form['message'])
+    return "<h1>Your message has been successfully submitted!</h1>"
 
 
 if __name__ == "__main__":
