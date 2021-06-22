@@ -5,7 +5,12 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>Contact Me</h1>
+                            {% if request.method == 'POST' %}
+                                <h1>Successfully sent your message</h1>
+                            {% else %}
+                                <h1>Contact Me</h1>
+                            {% endif %}
+
                             <span class="subheading">Have questions? I have answers.</span>
                         </div>
                     </div>
@@ -19,7 +24,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
                         <div class="my-5">
-                            <form id="contactForm" action="{{ url_for('received_data') }}" method=post novalidate>
+                            <form id="contactForm" action="{{ url_for('goto_contact') }}" method=post novalidate>
                                 <div class="form-floating">
                                     <input name="name" class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                     <label for="name">Name</label>
