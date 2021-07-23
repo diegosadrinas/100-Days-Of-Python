@@ -21,6 +21,7 @@ class InternetSpeedTwitterBot:
     def tweet_internet_company(self):
         driver = self.driver
         url = "https://twitter.com/login"
+        isp_account = "@iplanliv"
         driver.get(url)
         user_id = decouple.config("USER_ID")
         password = decouple.config("PASSWORD")
@@ -32,9 +33,11 @@ class InternetSpeedTwitterBot:
         time.sleep(4)
         text_box = driver.find_element_by_class_name("public-DraftStyleDefault-ltr")
         text_box.click()
-        tweet_input = text_box.send_keys(f"@iplanliv mi velocidad de bajada en este momento es de {self.current_speed}, "
+        tweet_input = text_box.send_keys(f"{isp_account} mi velocidad de bajada en este momento es de {self.current_speed}, "
                                          f"cuando estoy pagando por {self.speed_up}mb, Cómo lo solucionamos??")
         send_tweet = driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/'
                                                   'div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[4]/div/div/div[2]'
                                                   '/div[3]/div')
         send_tweet.click()
+        time.sleep(2)
+        driver.quit()

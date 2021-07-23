@@ -4,3 +4,5 @@ Needless to say, you'll need to update the data with your ISP twitter account an
 
 I chose fast.com over another common speed tests (speedtest for example) simply because it is easy to scrap and identify de needed element. Also, because is far less detailed, which helps with the project's functionality.
 
+For obvious reasons, the tweet is written in spanish and adapted to a "local style". 
+

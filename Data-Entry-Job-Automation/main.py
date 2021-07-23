@@ -88,6 +88,8 @@ for index in range(len(addresses_list)):
     link_input.send_keys(link_list[index])
     submit_answer = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div/div').click()
 
+driver.quit()
+
 
 
 
